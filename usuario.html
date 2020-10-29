@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="es">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TURNOS PROGRAMADOS</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+<head>
+    <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="estilos2.css" th:href="@{/css/user-form.css}">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 p-md-0">
+                <div id="sidebar-container" class="bg-primary">
+                    <div class="logo">
+                        <h1 class="text-light text-center ">FORUM</h1>
+                    </div>
+                    <div class="container  d-flex justify-content-center align-items-center">
+                        <img src="logodefinitivo.jpg" width="150px ">
+                    </div>
+                    <div class="menu mt-5 ml-3" style="font-size: larger;">
+                        <a href="perfil.html" class="d-block text-light text-center p-3"></i><i
+                                class="icon ion-md-today mr-2 lead"></i>Perfil</a>
+                        <a href="altas.html" class="d-block text-light text-center p-3"><i
+                                class="icon ion-md-person mr-2 lead"></i>Altas</a>
+                        <a href="usuario.html" class="d-block text-light text-center p-3"><i
+                                class="icon ion-md-body mr-2 lead"></i>Usuario</a>
+                        <a href="turnos.html" class="d-block text-light text-center p-3"><i
+                                class="icon ion-md-create mr-2 lead"></i>Turnos</a>
+                        <a href="login.html" class="d-block text-light text-center p-3"> <i
+                                class="icon ion-md-exit mr-2 lead"></i></i>Salir</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="container">
+                    <div class="col-lg-12 mx-auto" id="myTab" role="tablist" style="padding-top: 5%;">
+                        <ul class="nav nav-tabs justify-content-end">
+                            <li class="nav-item">
+                                <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list" role="tab"
+                                    aria-controls="list" aria-selected="false">Historial</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" id="form-tab" data-toggle="tab" href="#form" role="tab"
+                                    aria-controls="form" aria-selected="true">Nuevo Turno</a>
+                            </li>
+                        </ul>
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane fade show active" id="list" role="tabpanel" aria-labelledby="list-tab">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>HISTORIA CLINICA</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="table-responsive">
+                                            <table id="userList" class="table table-bordered table-hover table-striped">
+                                                <thead class="thead-light">
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">Especialidad</th>
+                                                        <th scope="col">Profesional</th>
+                                                        <th scope="col">Dia</th>
+                                                        <th scope="col">Horario</th>
+                                                        <th>
+                                                        </th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody id="tablados">
+                                                    <tr>
+                                                        <td>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane fade" id="form" role="tabpanel" aria-labelledby="form-tab">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h4>Introducir Usuario</h4>
+                                    </div>
+                                    <div class="card-body">
+                                        <form class="form" onsubmit="btn_guardar(event)">
+                                            <div class="form-group row">
+                                                <label
+                                                    class="col-lg-3 col-form-label form-control-label">Especialidad</label>
+                                                <div class="col-lg-9">
+                                                    <select class="form-control" id="especialidad" type="text">
+                                                        <option value="CIRUGIA CARDIOVASCULAR">CIRUGIA CARDIOVASCULAR
+                                                        </option>
+                                                        <option value="CIRUGIA ESTETICA">CIRUGIA ESTETICA</option>
+                                                        <option value="CIRUGIA GENERAL">CIRUGIA GENERAL</option>
+                                                        <option value="GINECOLOGIA">GINECOLOGIA</option>
+                                                        <option value="ODONTOLOGIA GENERAL">ODONTOLOGIA GENERAL</option>
+                                                        <option value="TRAUMATOLOGIA">TRAUMATOLOGIA</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label form-control-label">Profesional
+                                                    Medico</label>
+                                                <div class="col-lg-9">
+                                                    <select class="form-control" id="profesional" type="text">
+                                                        <option value="DUHALDE SEBASTIAN EDUARDO" selected>DUHALDE
+                                                            SEBASTIAN EDUARDO</option>
+                                                        <option value="ALLORI BRUNO NICOLAS">ALLORI BRUNO NICOLAS
+                                                        </option>
+                                                        <option value="GIUDICE MATIAS NICOLAS">GIUDICE MATIAS NICOLAS
+                                                        </option>
+                                                        <option value="PALAZZO EDUARDO ALEJANDRO">PALAZZO EDUARDO
+                                                            ALEJANDRO</option>
+                                                        <option value="BOLLEA PEDRO ANTONIO">BOLLEA PEDRO ANTONIO
+                                                        </option>
+                                                        <option value="FAJRE LUIS ROBERTO">FAJRE LUIS ROBERTO</option>
+                                                        <option value="GONZALEZ NAVARRO GILDA DEL VALLE">GONZALEZ
+                                                            NAVARRO GILDA DEL VALLE</option>
+                                                        <option value="NIEVAS RAQUEL EVANGELINA">NIEVAS RAQUEL
+                                                            EVANGELINA</option>
+                                                        <option value="DUPUY MATIAS EZEQUIEL">DUPUY MATIAS EZEQUIEL
+                                                        </option>
+                                                        <option value="GUIBERT MARIA JOSE">GUIBERT MARIA JOSE</option>
+                                                        <option value="ITURRE SEBASTIAN EDUARDO">ITURRE SEBASTIAN
+                                                            EDUARDO</option>
+                                                        <option value="CARRASCO MIGUEL ANGEL">CARRASCO MIGUEL ANGEL
+                                                        </option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label class="col-lg-3 col-form-label form-control-label">Dia</label>
+                                                <div class="col-lg-9">
+                                                    <input class="form-control" id="dia" type="date">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <label
+                                                    class="col-lg-3 col-form-label form-control-label">Horario</label>
+                                                <div class="col-lg-9">
+                                                    <input class="form-control" id="horario" type="time">
+                                                </div>
+                                            </div>
+                                            <div class="form-group row">
+                                                <div class="col-lg-12 text-center mt-5">
+                                                    <input type="submit" class="btn btn-primary" value="Guardar">
+                                                    <input type="reset" class="btn btn-danger" value="Cancel">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="usuarioapp.js"></script>
+    <script type="text/javascript" src="turnosapp.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Yantramanav:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6" style="background-color:#00C2CB">
+                <div class="container  d-flex justify-content-center align-items-center" style="height:100vh">
+                    <img src="logodefinitivo.jpg" width="200px ">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="container d-flex justify-content-center align-items-center" style="height:100vh">
+                    <div class="card border-info mb-3 text-white bg-info mb-3" style="width: 20rem;">
+                        <div class="card-body p-4" style="background-color: #00C2CB;">
+                            <form action="" class="form" id="form">
+                                <div class="form__group form" id="group__user">
+                                    <label for="user" class="form__label" style="font-size: large;">Usuario</label>
+                                    <div class="form__group-input">
+                                        <input type="text" class="form__input" name="user" id="user">
+                                        <i class="form__validation-state fas fa-times-circle"></i>
+                                    </div>
+                                    <p class="form__input-error">El usuario puede tener 4 a 16 dígitos y solo puede
+                                        contener numeros, letras
+                                        y guion bajo
+                                    </p>
+                                </div>
+                                <div class="form__group form" id="group__password">
+                                    <label for="password" class="form__label" style="font-size: large;">Contraseña</label>
+                                    <div class="form__group-input">
+                                        <input type="password" class="form__input" name="password" id="password">
+                                        <i class="form__validation-state fas fa-times-circle"></i>
+                                    </div>
+                                    <p class="form__input-error">Contraseña incorrecta</p>
+                                </div>
+                                <div class="form__message" id="form__message">
+                                    <p><i class="fas fa-exclamation-triangle"></i><b> Complete los campos </b>
+                                    </p>
+                                </div>
+                                <div class="form__group form__group-btn-send">
+                                    <button  class="btn btn-primary btn-block " type="submit"
+                                        class="form__btn ">Ingresar</button>
+                                    <p class="form__message-successful " id="form__message-successful">Ingreso
+                                        exitoso</p>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12 py-2">
+                                        <button  class="btn btn-outline-secondary btn-block">
+                                            Olvido la contraseña
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="loginapp.js"></script>
+    <script src="https://kit.fontawesome.com/918cd60e89.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>
